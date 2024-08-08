@@ -7,7 +7,7 @@ import { plantSeeds } from "./tractor.js";
 
 
 const yearlyPlan = createPlan()
-const seedPlants = plantSeeds(yearlyPlan)
-const bigGreenTractor = usePlant(seedPlants)
-const harvestedPlants = harvestPlants(bigGreenTractor)
+const bigGreenTractor = plantSeeds(yearlyPlan)
+const plantsInField = usePlant(bigGreenTractor)
+const harvestedPlants = harvestPlants(plantsInField)
 console.log(harvestedPlants)

@@ -1,7 +1,7 @@
-export const harvestPlants = (plants) => {
+export const harvestPlants = (growingPlants) => {
     const harvest = [];
 
-    for (const plant of plants) {
+    for (const plant of growingPlants) {
         let output = 0
         if (plant.type === "Corn") {
            output = plant.output / 2

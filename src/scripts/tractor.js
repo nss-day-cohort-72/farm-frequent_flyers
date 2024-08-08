@@ -4,40 +4,40 @@ import { createPotato } from "./seeds/potato.js";
 import { createSoybean } from "./seeds/soybean.js";
 import { createWheat } from "./seeds/wheat.js"
 import { createSunflower } from "./seeds/sunflower.js"
+import { addPlant } from "./field.js";
 
 export const plantSeeds = (plan) => {
-    const seeds = [];
+
     for (let i = 0; i < plan.length; i++) {
         let rows = plan[i];
 
         for ( const row of rows ) {
             if ( row.includes("Soybean")) {
-                seeds.push(createSoybean())
+                addPlant(createSoybean())
             }
             else if 
                 ( row.includes("Corn")) {
                     let cornPlant = createCorn()
-                    seeds.push(...cornPlant)
+                    addPlant(...cornPlant)
             }
             else if
                 ( row.includes("Asparagus")) {
-                    seeds.push(createAsparagus())
+                    addPlant(createAsparagus())
             }
             else if
                 ( row.includes("Wheat")) {
-                    seeds.push(createWheat())
+                    addPlant(createWheat())
             }   
             else if
                 ( row.includes("Potato")) {
-                    seeds.push(createPotato())
+                    addPlant(createPotato())
             }    
             else if
                 ( row.includes("Sunflower")) {
-                    seeds.push(createSunflower())
+                    addPlant(createSunflower())
             }   
             
             
         };
     };
-    return seeds;
 };
