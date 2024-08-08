@@ -1,16 +1,18 @@
 const plants = []
 
-export const addPlant = (seed) =>{
-    if (Array.isArray(seed) === true) {
-        for (const seed of corn) {
+export const addPlant = (seeds) =>{
+    if (Array.isArray(seeds) === true) {
+        for (const seeds of corn) {
             plants.push(corn)
         }
     }
-    else (plants.push(seed)) 
+    else (plants.push(seeds)) 
 
 }
 
 export const usePlant = () => {
 
-    return plants.slice()
+    const growingPlants = plants.slice()
+    
+    return growingPlants
 }
