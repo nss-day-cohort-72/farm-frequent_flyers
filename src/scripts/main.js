@@ -1,3 +1,4 @@
+import { catalog } from "./catalog.js";
 import { usePlant, addPlant } from "./field.js";
 import { harvestPlants } from "./harvester.js";
 import { createPlan } from "./plan.js";
@@ -10,4 +11,15 @@ const yearlyPlan = createPlan()
 const bigGreenTractor = plantSeeds(yearlyPlan)
 const plantsInField = usePlant(bigGreenTractor)
 const harvestedPlants = harvestPlants(plantsInField)
-console.log(harvestedPlants)
+const foodHTML = catalog(harvestedPlants)
+
+const renderCatalogToDOM = (foodHTML) => {
+    const messages = document.getElementById('container')
+    if (container) {
+        container.innerHTML = foodHTML;
+    } else {
+        console.error('Could not find element with id "container"')
+    }
+};
+renderCatalogToDOM(foodHTML);
+
