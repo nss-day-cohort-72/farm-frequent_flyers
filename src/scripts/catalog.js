@@ -5,7 +5,7 @@ export const catalog = (harvestedFood) => {
 
         foodHTML += `
 
-            <section class="plant">${food.type}</section>`
+            <section class="plant"> ${food.type} </section>`
         
     }
     return foodHTML;
