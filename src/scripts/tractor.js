@@ -5,13 +5,11 @@ import { createSoybean } from "./seeds/soybean.js";
 import { createWheat } from "./seeds/wheat.js"
 import { createSunflower } from "./seeds/sunflower.js"
 
-export const plantSeeds = (plan, yearlyPlan) => {
+export const plantSeeds = (plan) => {
     const seeds = [];
     for (let i = 0; i < plan.length; i++) {
         let rows = plan[i];
 
-        /* going rows.length and pushing soybean for each iteration
-        it sees 'Soybean' through row 1 and row 2. */
         for ( const row of rows ) {
             if ( row.includes("Soybean")) {
                 seeds.push(createSoybean())
